@@ -129,6 +129,17 @@ def add_mode_wild(results):
         )
     )
 
+def add_mode_wild_plus(results):
+    """Change mode to classic"""
+    results.append(
+        InlineQueryResultArticle(
+            "mode_wildp",
+            title=_("🐉 Wild mode plus"),
+            input_message_content=
+            InputTextMessageContent(_('Into the Wild PLUS~ 🐉'))
+        )
+    )
+
 
 def add_draw(player, results):
     """Add option to draw"""

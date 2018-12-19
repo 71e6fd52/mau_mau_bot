@@ -36,7 +36,7 @@ from errors import (NoGameInChatError, LobbyClosedError, AlreadyJoinedError,
 from internationalization import _, __, user_locale, game_locales
 from results import (add_call_bluff, add_choose_color, add_draw, add_gameinfo,
                      add_no_game, add_not_started, add_other_cards, add_pass,
-                     add_card, add_mode_classic, add_mode_fast, add_mode_wild)
+                     add_card, add_mode_classic, add_mode_fast, add_mode_wild, add_mode_wild_plus)
 from shared_vars import gm, updater, dispatcher
 from simple_commands import help_handler
 from start_bot import start_bot
@@ -592,8 +592,9 @@ def reply_to_query(bot, update):
         if not game.started:
             if user_is_creator(user, game):
                 add_mode_classic(results)
-                add_mode_fast(results)
+                #  add_mode_fast(results)
                 add_mode_wild(results)
+                add_mode_wild_plus(results)
             else:
                 add_not_started(results)
 

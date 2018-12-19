@@ -64,10 +64,12 @@ class Game(object):
         return players
 
     def start(self):
-        if self.mode == None or self.mode != "wild":
+        if self.mode == None or self.mode == "classic":
             self.deck._fill_classic_()
-        else:
+        elif self.mode == 'wild':
             self.deck._fill_wild_()
+        elif self.mode == 'wildp':
+            self.deck._fill_wild_plus_()
 
         self._first_card_()
         self.started = True

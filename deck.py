@@ -84,3 +84,17 @@ class Deck(object):
             for _ in range(6):
                 self.cards.append(Card(None, None, special=special))
         self.shuffle()
+
+    def _fill_wild_plus_(self):
+        # Fill deck with a wild card set
+        self.cards.clear()
+        for color in c.COLORS:
+            for value in c.WILD_VALUES:
+                for _ in range(2):
+                    self.cards.append(Card(color, value))
+            for _ in range(6):
+                self.cards.append(Card(color, 'draw'))
+        for special in c.SPECIALS:
+            for _ in range(4):
+                self.cards.append(Card(None, None, special=special))
+        self.shuffle()
