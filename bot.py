@@ -592,7 +592,7 @@ def reply_to_query(bot, update):
         if not game.started:
             if user_is_creator(user, game):
                 add_mode_classic(results)
-                #  add_mode_fast(results)
+                add_mode_fast(results)
                 add_mode_wild(results)
                 add_mode_wild_plus(results)
             else:
